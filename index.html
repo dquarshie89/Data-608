@@ -13,7 +13,7 @@
 
 
         <p>
-            <p>Create a function that takes a word and reverses it</p>
+            <p>Reverse a word</p>
             <form name='ReverseForm'>
                  <input type="text" size="12" name='raw'>
                 <input type="button" value="Reverse Word" onClick=print_result1()>
@@ -42,7 +42,7 @@
 <br><br>
 
 
-        <p>Create a function that takes an input number, and prints a table with the first 20 multiples of the number, in order 5x4</p>
+        <p>See first 20 multiples of a number</p>
 
         <!--Functions to generate table from input-->
         <script type="text/javascript">
@@ -89,7 +89,7 @@
 <br><br>
 
 
-        <p>Create a function that takes an input number, and prints a table with the first 20 multiples of the number, in order 5x4</p>
+        <p>Select a president to show their height and weight.</p>
 
         <h1 id="output"></h1>
         <script>
@@ -101,11 +101,11 @@
         }, function(error, rows) {
             d3.select("#output")
                 .text(
-                    rows[0].Name + " " + "was " +
-                    rows[0].Height + " inches tall and weighed" +
+                    rows[0].Name + " was " +
+                    rows[0].Height + " inches tall and weighed " +
                     rows[0].Weight + " pounds")
         });
-        </script>   
+        </script>  
 
     </body>
 </html>
