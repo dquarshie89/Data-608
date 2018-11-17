@@ -83,7 +83,29 @@
 
         <!--Table Output-->
         <div id="target"></div>
-        
+     
+<br><br>
+<hr>
+<br><br>
+
+
+        <p>Create a function that takes an input number, and prints a table with the first 20 multiples of the number, in order 5x4</p>
+
+        <h1 id="output"></h1>
+        <script>
+        var f = "presidents.csv"
+        d3.csv(f, function(d) {
+          return {
+            Name: d.Name, Height: d.Height, Weight: d.Weight,
+         };
+        }, function(error, rows) {
+            d3.select("#output")
+                .text(
+                    rows[0].Name + " " + "was " +
+                    rows[0].Height + " inches tall and weighed" +
+                    rows[0].Weight + " pounds")
+        });
+        </script>   
 
     </body>
 </html>
