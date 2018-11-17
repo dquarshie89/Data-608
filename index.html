@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Data 608: Module 5</title>
+        <h1>Data 608: Module 5</h1>
+        <h2>David Quarshie</h2>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.4/d3.min.js"></script>
+    </head>
+
+    <body>
+
+
+        <p>
+            <p>Create a function that takes a word and reverses it</p>
+            <form name='ReverseForm'>
+                 <input type="text" size="12" name='raw'>
+                <input type="button" value="Reverse Word" onClick=print_result1()>
+            </form>
+        </p>
+
+        <!-- create a div to display the result-->
+        <div id="Q1"></div>
+
+        <!-- two functions, one to reverse the string, one to print the string onClick -->
+        <script type="text/javascript">
+        function reversefunc(string){
+             var output = '';
+             output = string.split('').reverse().join('');
+            return output
+        };
+
+        function print_result1(){
+            var target = document.getElementById('Q1');
+            target.innerHTML = reversefunc(document.ReverseForm.raw.value);
+        };
+        </script>
+
+<br><br>
+<hr>
+<br><br>
+
+
+        <p>Create a function that takes an input number, and prints a table with the first 20 multiples of the number, in order 5x4</p>
+
+        <!--Functions to generate table from input-->
+        <script type="text/javascript">
+
+        function multArray(num){
+            myArray = [];
+            var finalhtml = '<table border="8">';
+
+            for (i = 1; i <= 20; i++) {myArray.push(num * i)};
+            for (i = 0; i < 20; i++){
+                if (i % 4 == 0) { 
+                    finalhtml = finalhtml +'<tr>'
+                };
+                finalhtml = finalhtml + '<td>' + myArray[i] + '</td>';
+                if (i % 4 == 3){
+                    finalhtml = finalhtml + '</tr>'
+                };
+    
+            };
+            finalhtml = finalhtml + '</table>';
+            return finalhtml
+        };
+
+
+        function displayTable(){
+            var t = document.getElementById("target");
+            t.innerHTML = multArray(document.getElementById('num').value);
+        }
+
+        </script>
+
+        <!--Input Form 1-->
+        <form name="myTable">
+            <input id="num" type="number" size="4">
+            <input type="button" value="Generate Table" onClick="displayTable();">
+        </form>
+        <br>
+
+        <!--Table Output-->
+        <div id="target"></div>
+        
+
+    </body>
+</html>
