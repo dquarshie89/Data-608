@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>Data 608: Module 5</title>
-        <h1>Data 608: Module 5</h1>
-        <h2>David Quarshie</h2>
+        <h1>David Quarshie</h1>
+        <h2>Data 608: Module 5</h2>
+        
 
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.4/d3.min.js"></script>
     </head>
@@ -16,7 +17,7 @@
             <p>Reverse a word</p>
             <form name='ReverseForm'>
                  <input type="text" size="12" name='raw'>
-                <input type="button" value="Reverse Word" onClick=print_result1()>
+                <input type="button" value="Reverse Word" onClick=print_result()>
             </form>
         </p>
 
@@ -31,7 +32,7 @@
             return output
         };
 
-        function print_result1(){
+        function print_result(){
             var target = document.getElementById('Q1');
             target.innerHTML = reversefunc(document.ReverseForm.raw.value);
         };
@@ -49,7 +50,7 @@
 
         function multArray(num){
             myArray = [];
-            var finalhtml = '<table border="8">';
+            var finalhtml = '<table border="5">';
 
             for (i = 1; i <= 20; i++) {myArray.push(num * i)};
             for (i = 0; i < 20; i++){
@@ -88,9 +89,7 @@
 <hr>
 <br><br>
 
-
-        <p>Select a president to show their height and weight.</p>
-
+        <p>Select a president to show his height and weight.</p>
         <h1 id="output"></h1>
           <script src="http://d3js.org/d3.v3.js"></script>
           <script>
