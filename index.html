@@ -92,20 +92,27 @@
         <p>Select a president to show their height and weight.</p>
 
         <h1 id="output"></h1>
-        <script>
-        var f = "presidents.csv"
-        d3.csv(f, function(d) {
-          return {
-            Name: d.Name, Height: d.Height, Weight: d.Weight,
-         };
-        }, function(error, rows) {
-            d3.select("#output")
-                .text(
-                    rows[0].Name + " was " +
-                    rows[0].Height + " inches tall and weighed " +
-                    rows[0].Weight + " pounds")
-        });
-        </script>  
+          <script src="http://d3js.org/d3.v3.js"></script>
+          <script>
+          d3.csv("presidents.csv", function(error, data) {
+            var select = d3.select("body")
+              .append("div")
+              .append("select")
+
+            select
+              .on("change", function(d) {
+                var value = d3.select(this).property("value");
+                alert(value);
+              });
+
+            select.selectAll("option")
+              .data(data)
+              .enter()
+                .append("option")
+                .attr("value", function (d) { return d.Height; })
+                .text(function (d) { return d.Name; });
+          });
+          </script>
 
     </body>
 </html>
