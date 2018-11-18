@@ -109,7 +109,7 @@
               .data(data)
               .enter()
                 .append("option")
-                .attr("value", function (d) { return d.Height; })
+                .attr("value", function (d) { return d.Name +"was " + d.Height +" inches tall and weighed " + d.Weight + " pounds."; })
                 .text(function (d) { return d.Name; });
           });
           </script>
