@@ -99,7 +99,7 @@
               .append("select")
 
             select
-              .on("click", function(d) {
+              .on("change", function(d) {
                 var value = d3.select(this).property("value");
                 alert(value);
               });
@@ -108,7 +108,7 @@
               .data(data)
               .enter()
                 .append("option")
-                .attr("value", function (d) { return d.Name +" was " + d.Height +" inches tall and weighed " + d.Weight + " pounds."; })
+                .property("value", function (d) { return d.Name +" was " + d.Height +" inches tall and weighed " + d.Weight + " pounds."; })
                 .text(function (d) { return d.Name; });
           });
           </script>
