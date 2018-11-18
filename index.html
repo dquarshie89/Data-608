@@ -21,10 +21,8 @@
             </form>
         </p>
 
-        <!-- create a div to display the result-->
         <div id="Q1"></div>
 
-        <!-- two functions, one to reverse the string, one to print the string onClick -->
         <script type="text/javascript">
         function reversefunc(string){
              var output = '';
@@ -45,7 +43,7 @@
 
         <p>See first 20 multiples of a number</p>
 
-        <!--Functions to generate table from input-->
+ 
         <script type="text/javascript">
 
         function multArray(num){
@@ -101,7 +99,7 @@
             select
               .on("change", function(d) {
                 var value = d3.select(this).property("value");
-                alert(value);
+                text(value);
               });
 
             select.selectAll("option")
