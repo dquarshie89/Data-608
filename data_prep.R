@@ -44,3 +44,14 @@ biz <- biz %>%
 biz$Period <- as.Date(as.yearmon(biz$Period, '%m/%d/%Y'))
 biz$Year <- year(biz$Period)
 biz$Month <- month(biz$Period)
+newbiz <- biz %>%
+  group_by(ZipCode, Year, Month) %>% summarize(NewBusinesses = n()) %>% 
+  group_by(ZipCode, Year) %>% mutate(TotalNewBiz = cumsum(NewBusinesses)) %>%
+  ungroup() %>% arrange(ZipCode, Year, Month)
+newbiz$Year <- replace(as.character(newbiz$Year), newbiz$Year == "0", "2000")
+newbiz$Year <- replace(as.character(newbiz$Year), newbiz$Year == "1", "2001")
+newbiz$Year <- replace(as.character(newbiz$Year), newbiz$Year == "2", "2002")
+newbiz$Year <- replace(as.character(newbiz$Year), newbiz$Year == "3", "2003")
+newbiz$Year <- replace(as.character(newbiz$Year), newbiz$Year == "4", "2004")
+newbiz$Year <- replace(as.character(newbiz$Year), newbiz$Year == "5", "2005")
+newbiz$Year <- replace(as.character(newbiz$Year), newbiz$Year == "6", "2006")
