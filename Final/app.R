@@ -23,7 +23,7 @@ server <- shinyServer(function(input, output) {
     ({if(input$city == 'All') {
       final
     } else {
-      final %>% filter(Borough == input$city)
+      final %>% filter(City == input$city)
     }}) %>%
       # create plotly graph using selected x, y, and size variables
       plot_ly(x = as.formula(paste0('~', input$x_mot)),
@@ -50,15 +50,17 @@ server <- shinyServer(function(input, output) {
       filter(Neighborhood == input$neighborhood) %>%
       # create plotly line graph based on selected y variable
       plot_ly(x = ~Year, y = as.formula(paste0('~', input$y_lin)),
-              text = ~ZipCode, hoverinfo = 'all', 
-              color = ~Borough, colors = rev(viridis(4))) %>%
+              #text = ~ZipCode, 
+              hoverinfo = "all", 
+              hovertext = ~ZipCode,
+              color = ~City, colors = rev(viridis(4))) %>%
       group_by(ZipCode) %>% add_lines() %>%
       # set layout parameters
       layout(margin = list(l = 100, r = 100, b = 50, t = 50, pad = 1),
              yaxis = list(type = input$lin_scale), hovermode = 'closest')
   })
   
-  
+ 
 })
 
 ui <- shinyUI(
@@ -66,14 +68,13 @@ ui <- shinyUI(
              "Changes in Home Prices due to Business Growth",
              tabPanel("Visualizations", 
                       fluidPage(
-                        # Create Date Motion Slider Plot Layout
                         sidebarPanel(
                           # Create Line Graph Layout
                           conditionalPanel(condition="input.conditionedPanels==2",
                                            selectInput(inputId = 'y_lin', 
                                                        label = 'Select Variable to Plot', 
                                                        choices = plot_vars,
-                                                       selected = 'PriceChange'),
+                                                       selected = 'MedianPrice'),
                                            radioButtons(inputId = 'lin_scale', 
                                                         label = 'Scale for y axis', 
                                                         choices = list(
@@ -85,8 +86,9 @@ ui <- shinyUI(
                                                        choices = sort(
                                                          unique(final$Neighborhood)
                                                        ),
-                                                       selected = 'Upper West Side')
+                                                       selected = 'Northeast Queens')
                           ),
+                          # Create Date Motion Slider Plot Layout
                           conditionalPanel(condition="input.conditionedPanels==1",
                                            selectInput(inputId = 'x_mot',
                                                        label = 'Select X Axis',
@@ -116,8 +118,8 @@ ui <- shinyUI(
                                            selectInput(inputId = 'color_mot',
                                                        label = 'Select Color Variable',
                                                        choices = c(list(
-                                                         'Borough' = 
-                                                           'Borough',
+                                                         'City' = 
+                                                           'City',
                                                          'Neighborhood'=
                                                            'Neighborhood',
                                                          '# of New Businesses Created' = 
@@ -126,7 +128,7 @@ ui <- shinyUI(
                                                            'MedianPrice',
                                                          '% Change in Home Prices' = 
                                                            'PriceChange')),
-                                                       selected = 'Borough')
+                                                       selected = 'City')
                           )
                         ),
                         mainPanel(

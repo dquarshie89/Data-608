@@ -84,9 +84,10 @@ final <- inner_join(final, real_estate_lastmonth %>%
                          select(ZipCode, State, Year, MedianPrice, PriceChange),
                        by = c('ZipCode', 'Year'))
 
+colnames(final)[colnames(final) == 'Borough'] <- 'City'
 # convert borough and neighborhoods to factors
 final$Neighborhood <- factor(final$Neighborhood)
-final$Borough <- factor(final$Borough)
+final$City <- factor(final$City)
 final$State <- factor(final$State)
 
 # convert to tbl_df for easier investigation

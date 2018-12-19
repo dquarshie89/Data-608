@@ -1,30 +1,9 @@
----
-title: "About"
-author: "David Quarshie"
-date: "12/18/2018"
-output: html_document
----
+# Changes in Home Prices due to Business Growth
+## David Quarshie
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# About
+In November 2018 Amazon annouced that it would be bringing new headquarters to Long Island City in Queens, NY and to Crystal City in Arlington, VA. Along these two new headquarters, Amazon prcolaimed that it would bring in 25,000 new jobs to each area that have a median income of $150,000. While some marveled at the fact that a major company would be in their city others feared that having a huge company in major cities would only make living there more unreasable. In just a month after the announcement articles have stated that housing prices in the areas have gone up at alarming rates(https://wtop.com/business-finance/2018/12/hq2-trulia-says-crystal-city-searches-surged-700/) (https://ny.curbed.com/2018/12/18/18146208/long-island-city-market-report-amazon-hq2). 
 
-## R Markdown
+Queens (minutes from Manhattan) and Crstyal City (minutes from Washington DC) are both areas that have seen new businesses come in. With those new businesses, how has the real estate market there been affected? This project takes a look at the city of NY as a whole (Manhattan, Brooklyn, Queens, The Bronx, and Staten Island) as well as Crytal City and Washington DC to see how home prices have changed over the last 10 years. In addition to home prices it also looks at how many new businesses have come into those areas. Users can select specific areas, Queens for example, to see the relationship of how the introduction of new businesses affect home prices and the trend of where the prices are headed.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+# Data
