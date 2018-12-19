@@ -6,7 +6,7 @@ library(zoo)
 library(lubridate)
 
 ##Zip Code Data##
-nyc_zips <- read.csv("https://raw.githubusercontent.com/dquarshie89/Data-608/master/NYC%20Zip%20Codes.csv",
+nyc_zips <- read.csv("https://raw.githubusercontent.com/dquarshie89/Data-608/master/Final/NYC%20Zip%20Codes.csv",
                      header= TRUE)
 #List each zip code for each boro and neighborhood
 nyc_zips <- nyc_zips %>% mutate(ZIP.Codes = strsplit(as.character(ZIP.Codes), ',')) %>% unnest(ZIP.Codes)
@@ -15,12 +15,12 @@ names(nyc_zips)[names(nyc_zips) == 'ZIP.Codes'] <- 'ZipCode'
 nyc_zips$ZipCode <- as.character(nyc_zips$ZipCode)
 nyc_zips$ZipCode <- str_trim(nyc_zips$ZipCode)
 #Add VA and DC zip codes
-va_zips <- read.csv("https://raw.githubusercontent.com/dquarshie89/Data-608/master/DC%20Zip%20Codes.csv",
+va_zips <- read.csv("https://raw.githubusercontent.com/dquarshie89/Data-608/master/Final/DC%20Zip%20Codes.csv",
                     header=TRUE)
 nyc_zips <- rbind(nyc_zips, va_zips)
 
 ##Real Estate Data##
-real_estate <- read.csv("https://raw.githubusercontent.com/dquarshie89/Data-608/master/NY_Price_Data.csv",
+real_estate <- read.csv("https://raw.githubusercontent.com/dquarshie89/Data-608/master/Final/NY_Price_Data.csv",
                         header= TRUE)
 #Get median prices for zip codes in the NY zip code data
 real_estate$RegionName <- as.character(real_estate$RegionName)
@@ -43,7 +43,7 @@ real_estate_lastmonth <- real_estate %>% filter(Month==12)
 
 
 ##Business Data##
-biz <- read.csv("https://raw.githubusercontent.com/dquarshie89/Data-608/master/NY_Biz_From_2008.csv",
+biz <- read.csv("https://raw.githubusercontent.com/dquarshie89/Data-608/master/Final/NY_Biz_From_2008.csv",
                 header= TRUE)
 # Filter for the zip codes that are in the zip code table
 biz <- biz %>% 
