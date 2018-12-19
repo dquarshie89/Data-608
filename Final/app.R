@@ -132,10 +132,10 @@ ui <- shinyUI(
                         mainPanel(
                           tabsetPanel(
                             # show motion chart
-                            tabPanel("Line Chart", value=1, 
+                            tabPanel("Line Chart", value=2, 
                                      plotlyOutput('pyLineChart')),
                             # show line chart
-                            tabPanel("Motion Chart", value=2, 
+                            tabPanel("Motion Chart", value=1, 
                                      plotlyOutput('pyMotionChart')),
                             id = "conditionedPanels"
                           )
