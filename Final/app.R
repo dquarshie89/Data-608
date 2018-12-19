@@ -19,25 +19,24 @@ cities <- c('All',"Manhattan","Brooklyn","Bronx","Queens","Staten Island","Arlin
 server <- shinyServer(function(input, output) {
   # create motion chart based on selections
   output$pyMotionChart <- renderPlotly({
-    #final %>%
     ({if(input$city == 'All') {
       final
     } else {
       final %>% filter(City == input$city)
     }}) %>%
-      # create plotly graph using selected x, y, and size variables
+      #Create scatterplot
       plot_ly(x = as.formula(paste0('~', input$x_mot)),
               y = as.formula(paste0('~', input$y_mot)),
-              text = ~ZipCode, hoverinfo = 'all', alpha = 0.75,
+              text = ~ZipCode,  alpha = 0.75,
               height = 600) %>%
       group_by(ZipCode) %>%
-      # scale axes based on selections
+      # Scale graph
       layout(xaxis = list(type = input$mot_scale_x),
              yaxis = list(type = input$mot_scale_y)) %>%
-      # color points based on selection
+      #Add Color
       add_markers(color = as.formula(paste0('~', input$color_mot)), 
                   frame = ~Year, colors = rev(viridis(4))) %>%
-      # set animation and layout parameters
+      # Animate
       animation_opts(frame = 2000, easing = 'cubic-in-out') %>%
       layout(margin = list(l = 100, r = 100, b = 50, t = 50, pad = 1))
     
@@ -50,7 +49,6 @@ server <- shinyServer(function(input, output) {
       filter(Neighborhood == input$neighborhood) %>%
       # create plotly line graph based on selected y variable
       plot_ly(x = ~Year, y = as.formula(paste0('~', input$y_lin)),
-              #text = ~ZipCode, 
               hoverinfo = "all", 
               hovertext = ~ZipCode,
               color = ~City, colors = rev(viridis(4))) %>%
@@ -66,7 +64,7 @@ server <- shinyServer(function(input, output) {
 ui <- shinyUI(
   navbarPage(theme = shinytheme("superhero"),
              "Changes in Home Prices due to Business Growth",
-             tabPanel("Visualizations", 
+             tabPanel("Charts", 
                       fluidPage(
                         sidebarPanel(
                           # Create Line Graph Layout

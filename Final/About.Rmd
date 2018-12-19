@@ -6,4 +6,11 @@ In November 2018 Amazon annouced that it would be bringing new headquarters to L
 
 Queens (minutes from Manhattan) and Crstyal City (minutes from Washington DC) are both areas that have seen new businesses come in. With those new businesses, how has the real estate market there been affected? This project takes a look at the city of NY as a whole (Manhattan, Brooklyn, Queens, The Bronx, and Staten Island) as well as Crytal City and Washington DC to see how home prices have changed over the last 10 years. In addition to home prices it also looks at how many new businesses have come into those areas. Users can select specific areas, Queens for example, to see the relationship of how the introduction of new businesses affect home prices and the trend of where the prices are headed.
 
-# Data
+# Data  
+Information about zip codes where Googled and placed into a dataframe. The NY and DC zipcodes were in a table that needed formatting and appending while the Crystal City zip code (22202) was just added to the final zip code table. Real estate data for NY and VA/DC was extracted from Zillow. It contained the zip codes and median home prices for the areas. Business data was found on NY's open data portal and VA's state corporation commission site. Both sites provided lists of businesses, along with thier zip codes and when they were incorporated.
+
+
+https://www.zillow.com/research/data/#median-home-value  
+https://catalog.data.gov/dataset/active-corporations-beginning-1800  
+https://www.scc.virginia.gov/clk/dwnld.aspx  
+
