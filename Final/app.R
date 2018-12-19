@@ -81,7 +81,7 @@ ui <- shinyUI(
                                                        choices = sort(
                                                          unique(final$Neighborhood)
                                                        ),
-                                                       selected = 'Northeast Queens'),
+                                                       selected = 'Northwest Queens'),
                                            selectInput(inputId = 'zip', 
                                                        label = 'Select Zip to Plot',
                                                        choices = sort(unique(final$ZipCode)))
