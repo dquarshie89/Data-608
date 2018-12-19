@@ -75,12 +75,7 @@ ui <- shinyUI(
                                                        label = 'Select Variable to Plot', 
                                                        choices = plot_vars,
                                                        selected = 'MedianPrice'),
-                                           radioButtons(inputId = 'lin_scale', 
-                                                        label = 'Scale for y axis', 
-                                                        choices = list(
-                                                          'Linear' = 'linear',
-                                                          'Logarithmic' = 'log'),
-                                                        inline = TRUE),
+
                                            selectInput(inputId = 'neighborhood', 
                                                        label = 'Select Neighborhood to Plot',
                                                        choices = sort(
