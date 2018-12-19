@@ -16,6 +16,8 @@ plot_vars <- list('# of New Businesses Created' = 'TotalNewBusinesses',
 
 cities <- c('All',"Manhattan","Brooklyn","Bronx","Queens","Staten Island","Arlington","Washington")
 
+zip <- sort(unique(final$ZipCode))
+
 server <- shinyServer(function(input, output) {
   # create motion chart based on selections
   output$pyMotionChart <- renderPlotly({
@@ -84,7 +86,10 @@ ui <- shinyUI(
                                                        choices = sort(
                                                          unique(final$Neighborhood)
                                                        ),
-                                                       selected = 'Northeast Queens')
+                                                       selected = 'Northeast Queens'),
+                                           selectInput(inputId = 'zip', 
+                                                       label = 'Select Zip to Plot',
+                                                       choices = sort(unique(final$ZipCode)))
                           ),
                           # Create Date Motion Slider Plot Layout
                           conditionalPanel(condition="input.conditionedPanels==1",
