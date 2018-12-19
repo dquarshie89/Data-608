@@ -63,9 +63,7 @@ server <- shinyServer(function(input, output) {
 
 ui <- shinyUI(
   navbarPage(theme = shinytheme("superhero"),
-             "Indicators of Changing Neighborhoods",
-
-             # tab containing main visualization
+             "Changes in Home Prices due to Business Growth",
              tabPanel("Visualizations", 
                       fluidPage(
                         # Create Date Motion Slider Plot Layout
