@@ -1,0 +1,12 @@
+name: NYandVAHomePrices
+title: NYandVAHomePrices
+username:
+account: dquarshie
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 621473
+bundleId: 1776695
+url: https://dquarshie.shinyapps.io/NYandVAHomePrices/
+when: 1545354908.93717
+asMultiple: FALSE
+asStatic: FALSE

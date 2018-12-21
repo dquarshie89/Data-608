@@ -75,16 +75,12 @@ ui <- shinyUI(
                                                        label = 'Select Variable to Plot', 
                                                        choices = plot_vars,
                                                        selected = 'MedianPrice'),
-
                                            selectInput(inputId = 'neighborhood', 
                                                        label = 'Select Neighborhood to Plot',
                                                        choices = sort(
                                                          unique(final$Neighborhood)
                                                        ),
-                                                       selected = 'Northwest Queens'),
-                                           selectInput(inputId = 'zip', 
-                                                       label = 'Select Zip to Plot',
-                                                       choices = sort(unique(final$ZipCode)))
+                                                       selected = 'Northwest Queens')
                           ),
                           # Create Date Motion Slider Plot Layout
                           conditionalPanel(condition="input.conditionedPanels==1",
@@ -96,7 +92,7 @@ ui <- shinyUI(
                                                         label = 'Scale for x axis', 
                                                         choices = list(
                                                           'Linear' = 'linear',
-                                                          'Logarithmic' = 'log'),
+                                                          'Log' = 'log'),
                                                         selected = 'log',
                                                         inline = TRUE),
                                            selectInput(inputId = 'y_mot',
@@ -107,7 +103,7 @@ ui <- shinyUI(
                                                         label = 'Scale for y axis', 
                                                         choices = list(
                                                           'Linear' = 'linear',
-                                                          'Logarithmic' = 'log'),
+                                                          'Log' = 'log'),
                                                         inline = TRUE),
                                            selectInput(inputId = 'city', 
                                                        label = 'Select City to Plot',

@@ -10,7 +10,7 @@ Queens (minutes from Manhattan) and Crstyal City (minutes from Washington DC) ar
 Information about zip codes where Googled and placed into a dataframe. The NY and DC zipcodes were in a table that needed formatting and appending while the Crystal City zip code (22202) was just added to the final zip code table. Real estate data for NY and VA/DC was extracted from Zillow. It contained the zip codes and median home prices for the areas. Business data was found on NY's open data portal and VA's state corporation commission site. Both sites provided lists of businesses, along with thier zip codes and when they were incorporated.
 
 
-https://www.zillow.com/research/data/#median-home-value  
-https://catalog.data.gov/dataset/active-corporations-beginning-1800  
-https://www.scc.virginia.gov/clk/dwnld.aspx  
+Home Prices: https://www.zillow.com/research/data/#median-home-value  
+NY Business Data: https://catalog.data.gov/dataset/active-corporations-beginning-1800  
+VA/DC Business Data https://www.scc.virginia.gov/clk/dwnld.aspx  
 
